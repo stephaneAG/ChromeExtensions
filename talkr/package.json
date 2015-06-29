@@ -1,0 +1,11 @@
+{
+  "name": "talks_nodejsRemote",
+  "version": "0.0.1",
+  "description": "NodeJS remote module for Talks! Chrome Packaged App",
+  "main": "talks_nodejsRemote.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "stephaneAG",
+  "license": "ISC"
+}

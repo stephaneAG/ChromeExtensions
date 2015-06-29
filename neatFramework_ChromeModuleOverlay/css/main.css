@@ -1,0 +1,120 @@
+/* neatFramework - Chrome App/Ext barebone CSS */
+
+body {
+  /* background-color: #565656; */ /* sublimetext appborder color */
+  background-color: #3E3D3A;
+  border-top: 1px solid #565656;
+  color: #8a8c7e;
+  font-size: 100%;
+  line-height: 1.25;
+  font-family: 'Lato', 'Avenir Next', Arial, sans-serif;
+}
+
+a { color: #DFDFDF; text-decoration: none; outline: none; }
+a:hover { color: #E6E6E6; }
+
+/* the debug serial console input text */
+input#console-input {
+  height: 25px;
+  border-radius: 3px;
+  border: solid 1px #353530;
+  background: #272822; /* background: #272822; */
+  color: #F2F1F0;
+  box-shadow: inset 0 0 3px #1C1D1B; /* testing an inset shadow */
+}
+input#console-input:focus { outline-width: 0; }
+
+
+/* blinking input */
+input, input:focus {
+  border:none;
+}
+input {
+  animation: blink-empty 1s infinite;
+  border-left: transparent solid 1px;
+  margin:5px; 
+}
+@keyframes blink-empty {
+  50% {border-left: 1px solid #333;}
+}
+
+/* the debug serial console ( not yet overlayed ) */
+div#serial-debugconsole {
+  height: 250px;
+  position: relative; /* necessary for the name in the corner*/
+  /* background: url(../img/serial_console_background_default.png) no-repeat center center; */
+  /* -webkit-filter: invert(100%); */ /* can be used as is as an alternative set of set colors */
+}
+
+div#serial-debugconsole ul {
+  padding: 0;
+  margin: 0;
+  height: 240px;
+  overflow-y: scroll;
+  padding-left: 5.5px;
+  padding-bottom: 5.5px;
+  background: #272822; /* desactivated while testing the background*/
+  box-shadow: inset 0 0 10px #1C1D1B; /* testing an inset shadow */
+}
+
+div#serial-debugconsole span.consolename { 
+  border: solid 1px #353530; /* original: border: solid 1px #F1F1F1 */ 
+  background: #171814; /* original: background: #fff; */
+  display: inline-block; 
+  height: 22px; 
+  padding: 0 6px; 
+  line-height: 22px; 
+  position: absolute; /* needs its parent to have relative positioning ! */
+  top: 8px; 
+  right: 22px; /* original: right: 6px;*/
+  text-align: center; 
+  font-size: 12px; 
+  color: #777;
+  border-radius: 5px; /* original: border-radius: 2px; */ 
+  /*z-index: 2;*/ /* original: z-index: 30;*/
+  -webkit-box-shadow: 1px 1px 2px 2px #1C1D1B; /* testing a drop-shadow */
+}
+
+
+
+/* the serial console colors defaults */
+div#serial-debugconsole ul li.consoleline.readylog { margin-top: 12.5px; margin-bottom: 6.5px; color: #62C4BF; } /* ready log */
+div#serial-debugconsole ul li.consoleline.clearedlog { margin-top: 12.5px; margin-bottom: 6.5px; color: #62C4BF; } /* cleared log */
+div#serial-debugconsole ul li.consoleline.serialconnectedlog { margin-top: 6.5px; margin-bottom: 6.5px; color: #FD971F; } /* serial connected log */
+div#serial-debugconsole ul li.consoleline.serialdisconnectedlog { margin-top: 6.5px; margin-bottom: 6.5px; color: #FD971F; } /* serial disconnect log */
+
+/* some tests for odd/even lines background color permutation */
+div#serial-debugconsole ul li.consoleline:not(.readylog):not(.clearedlog) { } /* affect all li's except the above 2 */
+div#serial-debugconsole ul li.consoleline:not(.readylog):not(.clearedlog):nth-child(odd) { } /* affect all li's except the above 2 */ /* keeping the background as one of the two lines colors if used */
+/* light alt odd: #D8D7DD */
+/*div#serial-debugconsole ul li.consoleline:not(.readylog):not(.clearedlog):nth-child(even) { background: #545454; }*/ /* affect all li's except the above 2 */
+div#serial-debugconsole ul li.consoleline:not(.readylog):not(.clearedlog):nth-child(even) { background: #1A1B18; } /* same as the above but more subtle  */
+/* light alt odd: #E5E4E7 */
+/*div#serial-debugconsole ul li.consoleline:not(.readylog):not(.clearedlog):last-child { font-size: 1.5em; }*/ /* emphasize a little on the last message received/written to better see it */
+div#serial-debugconsole ul li.consoleline:not(.readylog):not(.clearedlog):last-child { font-size: 1.3em; } /* same as above but a little less big ;p*/
+
+/* the console name & data colors by class */
+.console_name_default { color: #F92672; } /* the default color for the console name: sublimetext's orange */
+.console_data_default { color: #0A8BA2; } /* the default color for the console data: sublimetext's blue */
+.console_data_port_default { color: #7fc77d; } /* the default color for the console data: brackets Mbo theme's blue 1 */
+.console_data_baudrate_default { color: #FD971F; } /* the default color for the console port: brackets Mbo theme's blue 2 */
+.console_data_linefeed_default { color: #5EDAEC; } /* the default color for the console baudrate: brackets Mbo theme's adaptation from blue 2 */
+
+/* backup of the above during testing ( .. )
+.console_data_port_default { color: #039DB8; }
+.console_data_baudrate_default { color: #729CA2; }
+.console_data_linefeed_default { color: #5EDAEC; }
+*/
+
+/* the prefixes colors via class */
+.console_recv_prefix_default { color: #F92672; } /* the default color for the console RECV prefix: sublimetext's purple */
+.console_snd_prefix_default { color: #F92672; } /* the default color for the console RECV prefix: sublimetext's red */
+.console_recv_suffix_default { color: #F92672; } /* the default color for the console RECV suffix: sublimetext's purple */
+.console_snd_suffix_default { color: #F92672; } /* the default color for the console RECV suffix: sublimetext's red */
+
+/* some tags used within app_logic.js with the serial console ( NOT part of the serial console code/defautls ) */
+/* device(s)-related ( currently Arduino ) tags */
+span.arduino-message-received-serial-console-tag { color: #CE92BD; } /* (via Arduino LED toggle) */
+span.arduino-led-toggle-serial-console-tag { color: #FD5E98; } /* (via Arduino LED toggle) */
+/* serial-consle<n°>-related tags */
+span.serial-console-input-box-serial-console-tag { color: #0793AC; } /* (via serial console 1 input box) */

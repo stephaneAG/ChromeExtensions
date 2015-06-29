@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>stephaneAG Talks! - AirLiquide_iLab: Moldr</title>
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="stephaneAG">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/night.css" id="theme">
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <!-- [ NOW IN EXTERNAL FILE IN ACCCORDANCE TO CHROME PACKAGED APPS CSP ] -->
+</head>
+
+<body>
+ 
+  <div class="reveal">
+  <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+     
+      <!-- --// MAIN SLIDE: 1 > INTRO //-- -->
+      <section data-background-transition="slide"> <!-- data-background-transition="slide" -->
+        <h1>AirLiquide-iLab</h1>
+        <h3>Automated Mold Generation toolset</h3>
+        <p>
+          <small>Talk by 
+            <a href="http://stephaneadamgarnier.com"> Stéphane Garnier</a>
+            / 
+            <a href="http://twitter.com/stephaneAG">@stephaneAG</a>
+          </small>
+        </p>
+        <p>
+          <small>[ talk given at: AirLiquide-iLab headquarters on: 21/06/2014 ] </small>
+        </p>
+      </section>
+
+     
+      <!-- --// MAIN SLIDE: 2 > A FEW WORDS ABOUT ME //-- -->
+      <section style="text-align: left;" data-background-transition="slide"> <!-- style="text-align: left;" data-transition="linear" data-background-transition="slide" -->
+        <h2>A few words about me:</h2>
+          <p>
+            Hi ! <br/>
+            'name's Stéphane, 27<br/>
+          </p>
+          <p class="fragment">
+            <br/>
+            Coming from a literary background<br/>
+            Briefly studied Applied Arts & Design @LISAA & @Strate<br/>
+          </p>
+          <p class="fragment">
+            <br/>
+            Enjoying "computer stuff" from .. a while now
+            <br/>
+          </p>
+          <p class="fragment">
+            <br/>
+            Doing "global design", aka conceptual/graphic/interactive,<br/>
+            as well as consulting, R&D, & Web/Native Apps cross-platforms<br/>
+          </p>
+          <p class="fragment">
+            <br/>
+            Currently in a "Quest for Lower-level" ( mainly electronics & neuro )<br/>
+            <br/>
+          </p>
+          <p class="fragment">
+            <br/>
+            For more infos -> after the talk ? ;p<br/>
+            <br/>
+          </p>
+          <aside class="notes">
+            Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open
+            the speaker notes window (hit 's' on your keyboard).
+          </aside>
+      </section>
+      
+      
+      <!-- --// MAIN SLIDE: 3 > PROJECT & GOALS //-- -->
+      <section style="text-align: left;">
+        <h2>Project & Goals:</h2>
+          <p>
+            Codename: "<code>Moldr</code>" <br/>
+            The project goals are pretty straightforward: <br/><br/>
+          </p>
+          <ol>
+            <li class="fragment"> <p>get someone's head scan data</p> </li>
+          	<li class="fragment"> <p>produce a 3D mesh using that data</p></li>
+          	<li class="fragment"> <p>refine that 3D mesh</p></li>
+          	<li class="fragment"> <p>generate a mold from it</p></li>
+          	<li class="fragment"> <p>have that mold 3D-printed </p></li>
+          </ol>
+      </section>
+      
+      
+      <!-- --// MAIN SLIDE: 4 > INFOS ON HARDWARE //-- -->
+      <section style="text-align: left;">
+        
+        <section  data-transition="linear" data-background-transition="slide">
+          <h2>Hardware:</h2>
+          <p>
+            Support is nearly always already available <br/>
+            Specifically, we can split it in 2 major categories: <br/>
+            <br/>
+          </p>
+          <ul>
+            <li class="fragment"> <p>"PRO" <em class="fragment">  &nbsp;&nbsp; > aka professional product(s)</em> </p> </li>
+          	<li class="fragment"> <p>"DIY" <em class="fragment"> &nbsp;&nbsp;&nbsp;&nbsp; > aka Do-It-Yourself product(s)</em> </p> </li>
+          </ul>
+        </section>
+        
+        <section style="text-align: left;" data-transition="linear" data-background-transition="slide">
+          <h2>"PRO" hardware:</h2>
+          <p>
+            <ul>
+              <li class="fragment"> Vendor support [sometimes ?] available [free ?] </li>
+              <li class="fragment"> Works out-of-the-box [normally ?] </li>
+              <li class="fragment"> Maintenance provided [free ?] </li>
+              <li class="fragment"> Want an update ? It may cost you .. </li>
+            </ul>
+          </p>
+        </section>
+        
+        <section style="text-align: left;" data-transition="linear" data-background-transition="slide">
+          <h2>"DIY" hardware:</h2>
+          <p>
+            <ul>
+              <li class="fragment"> The obvious one: <strong class="fragment">DO IT YOURSELF !</strong> </li>
+              <li class="fragment"> Community support [mainly ?] available </li>
+              <li class="fragment"> Most of the time cost-effective </li>
+              <li class="fragment"> Out-of-the-box thinking & ideas (<em>&ldquo;cost-constrained creativity&rdquo;</em> ?)  </li>
+              <li class="fragment"> Community-enhanced </li>
+              <li class="fragment"> May evolve in a "PRO" hardware package <em class="fragment"> &nbsp; &ldquo;who said KickStarter ?&rdquo;</em> </li>
+            </ul>
+          </p>
+        </section>
+        
+        <section style="text-align: left;" data-transition="linear" data-background-transition="slide">
+          <h2>Current hardware setup:</h2>
+          <p>
+            <ul>
+              <li class="fragment">
+                <p>3D Scanner 
+                  <em class="fragment">  &#160;&#160;&#160; > DAVID SLS-2</em>
+                  <em class="fragment">  &nbsp;&nbsp;&#160;&#160;&#160;&#160;&#160;&#160;&#160; ( Structured Light ) </em> 
+                </p>
+              </li>
+          	  <li class="fragment">
+          	    <p>3D Printer 
+                  <em class="fragment">  &#160;&#160;&#160;&#160;&#160;&#160; > Leapfrog Creatr</em>
+                  <em class="fragment">  &nbsp;&nbsp; ( Fused Filament Fabrication ) </em> 
+                </p>
+          	  </li>
+            </ul>
+          </p>
+        </section>
+        
+      </section>
+      
+      
+      <!-- --// MAIN SLIDE: 5 > INFOS ON SOFTWARE//-- -->
+      <section style="text-align: left;">
+        
+        <section  data-transition="linear" data-background-transition="slide">
+          <h2>Software:</h2>
+          <p>
+            [ as for hardware (..) ]
+            <br/>
+          </p>
+        </section>
+        
+        <section style="text-align: left;" data-transition="linear" data-background-transition="slide">
+          <h2>"PRO" software:</h2>
+          <p>
+            <ul>
+              <li class="fragment"> Editor support available </li>
+              <li class="fragment"> Works out-of-the-box ( .. but can contain "bugs" .. or worse ? ) </li>
+              <li class="fragment"> Updates [surely] provided ( free ? ) </li>
+              <li class="fragment"> CLOSED SOURCE (!) <em class="fragment"> &nbsp;&nbsp;&nbsp; > aka "may not be easily customizable/hackable"</em> </li>
+            </ul>
+          </p>
+        </section>
+        
+        <section style="text-align: left;" data-transition="linear" data-background-transition="slide">
+          <h2>"DIY" software:</h2>
+          <p>
+            <ul>
+              <li class="fragment"> Again, the obvious one: <strong class="fragment">DO IT YOURSELF (!)</strong>
+                <p class="fragment"> but more exactly:
+                  <ul>
+                    <li class="fragment"> <em> try leveraging existing tools <em class="fragment">- & enhance them if possible</em> </em> </li>
+                    <li class="fragment"> <em> stand on the shoulders of giants <em class="fragment">- who's the new kid on the block ?</em> </em> </li>
+                  </ul>
+                </p>
+              </li>
+              <li class="fragment"> Community support [sometimes ?] available </li>
+              <li class="fragment"> Most of the time cost-effective </li>
+              <li class="fragment"> Out-of-the-box THINKING <em class="fragment">- Richard Stallman's &ldquo;playful cleverness&rdquo; ?</em> </li>
+              <li class="fragment"> May evolve in a "closed source" software package <em class="fragment">- who said licenses ?</em> </li>
+            </ul>
+          </p>
+        </section>
+        
+      </section>
+      
+      
+      <!-- --// MAIN SLIDE: 6 > 1st POC //-- -->
+      <section style="text-align: left;">
+        <h2>First POC:</h2>
+          <p>
+            blablablablabla <br/>
+            blablablablabla <br/>
+            blablablablabla <br/>
+          </p>
+      </section>
+      
+      
+      <!-- --// MAIN SLIDE: 7 > PLANNED MODUS OPERANDI //-- -->
+      <section style="text-align: left;">
+        <h2>Planned Modus Operandi:</h2>
+          <p>
+            blablablablabla <br/>
+            blablablablabla <br/>
+            blablablablabla <br/>
+          </p>
+      </section>
+      
+      
+      <!-- --// MAIN SLIDE: 8 > CURRENT SOFTWARE BRICKS //-- -->
+      <section style="text-align: left;">
+        <h2>Current software bricks:</h2>
+          <p>
+            blablablablabla <br/>
+            blablablablabla <br/>
+            blablablablabla <br/>
+          </p>
+      </section>
+      
+      
+      <!-- --// MAIN SLIDE: 9 > A POSSIBLE FUTURE ? //-- -->
+      <section style="text-align: left;">
+        <h2>A possible future ?</h2>
+          <p>
+            blablablablabla <br/>
+            blablablablabla <br/>
+            blablablablabla <br/>
+          </p>
+      </section>
+      
+      
+      <!-- --// MAIN SLIDE: 10 > RELATED //-- -->
+      <section style="text-align: left;">
+        <h2>Related:</h2>
+          <p>
+            blablablablabla <br/>
+            blablablablabla <br/>
+            blablablablabla <br/>
+          </p>
+      </section>
+      
+      
+      <!-- --// MAIN SLIDE: 11 > PERSONAL WORKFLOW //-- -->
+      <section style="text-align: left;">
+        <h2>Personal workflow:</h2>
+          <p>
+            blablablablabla <br/>
+            blablablablabla <br/>
+            blablablablabla <br/>
+          </p>
+      </section>
+      
+      
+      <!-- --// MAIN SLIDE: 12 > ALSO //-- -->
+      <section style="text-align: left;">
+        <h2>Also..</h2>
+          <p>
+            blablablablabla <br/>
+            blablablablabla <br/>
+            blablablablabla <br/>
+          </p>
+      </section>
+      
+      
+      <!-- --// MAIN SLIDE: 12 > THEN END / THX ! //-- -->
+      <section>
+      	<h1>THE END</h1>
+      	<h2>> THANKS !</h2>
+      	<h3>Questions are,as always, welcome :)</h3>
+      </section>
+      <!-- --//// END OF THE TALK SLIDES ////-- -->
+
+    </div>
+
+  </div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+<script src="js/app_logic.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Scanny remote </title>  
+</head>
+<body>
+  <div>
+    
+  </div>
+  <div>
+    <a id="on" href="#">On</a>
+    <a id="off" href="#">Off</a>
+  </div>
+
+  <!-- actual app layout -->
+  <div id="app_header">
+    <h3> Scanny remote v0.1a </h3>
+  </div>
+  
+  <div id="app_body">
+    <div id="serial_section">
+      <div id="serial_header">
+        <a id="open" data-connstatus="closed" href="#">open serial</a>
+        <select id="ports"></select> <!-- serial port selection -->
+	      <select id="baudrates"></select> <!-- baud rate selection -->
+      </div>
+      
+      <div id="serial_body">
+        <div id="serial_terminal"> stuff coming from serial & printed to serial </div>
+	      <div id="serial_prompt"> txtfield, send & clear btns</div>
+      </div>
+    </div>
+    <div id="laser_section"> 
+      <p>Laser controls & options -------- </p>
+      <a id="laser_toggle" href="#"> Laser On/Off </a>
+      <p>Start angle: 0<input type="range" name="laser_startAngle" min="0" max="180">180 </p>
+      <p>End angle: 0<input type="range" name="laser_startAngle" min="0" max="180">180 </p>
+      <p>Delay between steps: <input type="number" name="laser_delay" min="0" max="4000"></p>
+    </div>
+    
+    <div id="turntable_section"> 
+      <p>Turntable controls & options -------- </p>
+      <a id="turntable_toggle" href="#"> Turntable On/Off </a>
+      <p>Speed: Min<input type="range" name="turntable_speed" min="0" max="255">Max </p>
+      <p>Direction: Left<input type="range" name="turntable_direction" min="0" max="1">Right </p>
+      <p>Delay between steps: <input type="number" name="turntable_delay" min="0" max="4000"></p>
+    </div>
+
+    <div id="rotarybase_section"> 
+      <p>Rotary base controls & options -------- </p>
+      <a id="rotarybase_toggle" href="#"> Rotary base On/Off </a>
+      <p>Speed: Min<input type="range" name="rotarybase_speed" min="0" max="255">Max </p>
+      <p>Direction: Left<input type="range" name="rotarybase_direction" min="0" max="1">Right </p>
+      <p>Delay between steps: <input type="number" name="rotarybase_delay" min="0" max="4000"></p>
+    </div>
+
+  </div>
+  
+  <div id="app_footer">
+  </div>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

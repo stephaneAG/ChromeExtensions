@@ -1,0 +1,26 @@
+# important discussion to follow / with useful infos in it
+https://groups.google.com/a/chromium.org/forum/#!topic/chromium-apps/e9qKDGwHMus
+
+# polyfill code that should work across chrome versions
+http://pastebin.com/St3VchWz
+
+# stuff that should DEFINATELY WORK ! --> to try first for Arduino-related chrome extensions
+https://github.com/RIAEvangelist/Chrome-Serial-App
+
+Google chrome app samples on how to use their APIs
+https://developer.chrome.com/extensions/getstarted
+https://developer.chrome.com/extensions/apps
+https://developer.chrome.com/apps/serialhttps://developer.chrome.com/apps/app_window
+
+# interesting to follow anyway
+http://www.fabiobiondi.com/blog/category/arduino/
+
+# chrome arduino-related samples
+https://github.com/GoogleChrome/chrome-app-samples/tree/master/servo
+https://github.com/GoogleChrome/chrome-app-samples/tree/master/ioio ---> for Android IOIO OTG!
+
+# full list of the samples available
+https://github.com/GoogleChrome/chrome-app-samples
+
+
+# R: concerning neatFramework Chrome module(s), there's currently ( as of 19/05/2014) one module,  the serial one, contained with its Chrome Extenion/App test-implementation at "./neatFramework_ChromeModule"

@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "neatFramework Arduino Companion",
+    "short_name" : "ntFrmwrk Arduino",
+    "description":"neatFramework Arduino Chrome browser extension - provides 2-way serial comm.",
+    "minimum_chrome_version": "33",
+    "version": "0.0.0.1",
+    "offline_enabled": true,
+    "icons": {
+        "16": "icon-16.png",
+        "32": "icon-32.png",
+        "64": "icon-64.png",
+        "128": "icon-128.png",
+        "256": "icon-256.png"
+    },
+    "app": {
+        "background": {
+            "scripts": [
+                "main.js"
+            ]
+        }
+    },
+    "permissions": [
+        "serial"
+    ]
+}

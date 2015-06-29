@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>neatFramework - Crome Ext/App test file</title>
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+<body>
+  <div class="container">				
+    <h1 id="pageh1"> Hello neatFramework Chrome Ext/Apps ! </h1>
+    <a id="serial-toggle" data-connstatus="" data-ntfrmwrkLink="notweb" href="#">toggle serial ON</a>
+    <select id="ports"> <!-- serial port selection -->
+      <option value="unset">not set</option> <!-- easily prevent any error whil maintaining the javascript code lightweight -->
+    </select>
+    <a id="serial-refresh-toggle" data-ntfrmwrkLink="notweb" href="#">refresh port</a>
+    <select id="baudrates"> <!-- baud rate selection -->
+      <option value="unset">not set</option> <!-- same as above -->
+    </select>
+    <select id="linefeeds"> <!-- line endings selection -->
+      <!-- <option data-linefeed="custom" value=""> <input type="text" id="custom-linefeed" placeholder="Custom linefeed" > </input> </option> --> <!-- same as above -->
+      <!-- chrome fix for content-editable(at least, OUTSIDE of <option> ) : -webkit-user-select: auto; -->
+      <option data-linefeed="custom" value=""> <span> <p id="custom-linefeed" placeholder="Custom linefeed" content-editable="true" style="-webkit-user-select: auto;"> editable </p> </span> </option> -->
+      <!-- <option data-linefeed="custom" value=""> <p id="custom-linefeed" placeholder="Custom linefeed" content-editable="true" style="-webkit-user-select: auto;"> editable </p> </span> </option> -->
+    </select>
+    <a id="ArLED-toggle" data-ledstate="" data-ntfrmwrkLink="notweb"href="#"> Arduino LED toggle </a>
+    <p id="serial-debugconsole">Messages counter: 0<br></br> [message-placeholder] </p>
+  </div>
+
+  <!-- load the Extension/App modules -->
+  <script src="./js/neatFramework__Chrome_serial_MODULE.js"></script> <!-- load the Chrome serial module -->
+  <script src="./js/app_logic.js"></script> <!-- load the app logic ( not a "main.js" as the app is not big enough to need a dedicated module ) -->
+  
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>ntFrmwrk Chrome App/Ext</title>
+  <!-- <link rel="stylesheet" type="text/css" href="./css/main.css"> --> <!-- ORIGINAL PLACE OF THE MAIN CSS CODE-->
+
+  <!-- debug overlay START -->
+   <!-- <link rel="stylesheet" type="text/css" href="css/demo.css" /> -->
+  <link rel="stylesheet" type="text/css" href="css/style1.css" />
+  <!-- debug overlay END -->
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+
+</head>
+<body>
+  <div class="container">
+
+    <h1 id="pageh1"> neatFramework Chrome App/Ext v0.1a no  </h1>
+    
+    <a id="serial-toggle" data-connstatus="" data-ntfrmwrkLink="notweb" href="#">toggle serial ON</a>
+    
+    <select id="ports"> <!-- serial port selection -->
+      <option value="unset"> -set port- </option> <!-- easily prevent any error whil maintaining the javascript code lightweight -->
+    </select>
+    
+    <a id="serial-refresh-toggle" data-ntfrmwrkLink="notweb" href="#">refresh port</a>
+    
+    <select id="baudrates"> <!-- baud rate selection -->
+      <option value="unset"> -set baudrate- </option> <!-- same as above -->
+    </select>
+    
+    <select id="linefeeds"> <!-- line endings selection -->
+      <option value="unset"> -set linefeed- </option>
+      <!-- <option data-linefeed="custom" value=""> <input type="text" id="custom-linefeed" placeholder="Custom linefeed" > </input> </option> --> <!-- same as above -->
+      <!-- chrome fix for content-editable(at least, OUTSIDE of <option> ) : -webkit-user-select: auto; -->
+<!--<option data-linefeed="custom" value=""> <span> <p id="custom-linefeed" placeholder="Custom linefeed" content-editable="true" style="-webkit-user-select: auto;"> editable </p> </span> </option> -->
+      <!-- <option data-linefeed="custom" value=""> <p id="custom-linefeed" placeholder="Custom linefeed" content-editable="true" style="-webkit-user-select: auto;"> editable </p> </span> </option> -->
+    </select>
+    
+    <a id="ArLED-toggle" data-ledstate="" data-ntfrmwrkLink="notweb"href="#"> toggle Arduino LED </a>
+
+    <!-- overlay console toggle(s) -->
+    <p> 
+        <a id="console-toggle" data-ntfrmwrkLink="notweb" href="#">toggle console</a> 
+        <!-- <button id="trigger-overlay" type="button">Serial Console</button> --> <!-- not used by now, the above is -->
+	
+	<a id="console-clear" data-ntfrmwrkLink="notweb" href="#">clear console</a>
+	
+	<span>  <input id="console-input" type="text" placeholder="Enter message" > <a id="console-write" data-ntfrmwrkLink="notweb" href="#">write to the console</a> </span>
+
+	<select id="terminal-output"> <!-- serial console output selection -->
+          <option value="recvsnd">RECV & SND</option> <!-- display either RECV & SND -->
+	  <option value="recv">RECV only</option> <!-- display RECV only -->
+	   <option value="snd">SND only</option> <!-- display SND only -->
+	</select>
+	
+	<select id="terminal-type"> <!-- serial console terminal type selection -->
+	  <option value="single">single</option> <!-- single terminal, that can accept either RECV, SND, or RECV & SND -->
+	  <option value="dual">dual</option> <!-- dual terminal, that has 2 separate views, splitted horizontally or vertically -->
+	</select>
+	
+	<!-- the following should be grayed out if the terminal type is set to single -->
+	<select id="terminal-split"> <!-- serial console split for dual terminal type selection -->
+	   <option value="horizontal">horizontal</option> <!-- horizontal dual terminal, that can accept either RECV, SND, or RECV & SND in each of its views -->
+	    <option value="vertical">vertical</option> <!-- vertical dual terminal, that can accept either RECV, SND, or RECV & SND in each of its views -->
+	</select>
+    </p>
+
+    <div id="serial-debugconsole"> <ul> <li> <p>[message-placeholder]</p> </li> </ul> </div>
+  </div>
+
+  <!-- debug overlay START -->
+  <div data-overlay-status="close" class="overlay overlay-hugeinc">
+      <button id="console-close" type="button" class="overlay-close">Close</button>
+      <nav>
+        <h3> serial console</h3>
+	<p id="overlay-serial-console"> here will be the overlay serial console </div>
+      </na>
+    </div>
+  <!-- debug overlay   END -->
+
+  <!-- load the Extension/App modules -->
+
+  <!-- When using Brackets & its LiveReload extension ( the Brackets extension, not any browser's one ) - Works in both Firefox & Chrome ( also when Chrome "LiveReload" extension is NOT enabled ) -->
+  <!--<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> --> <!-- DEBUG: livecode the HTML/CSS/JS -->
+  <!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
+  <!-- R: find a way to have this working for Chrome Apps/Extensions ;D -->
+  <!-- <script src="js/livereload.js?host=localhost&port=32579"></script> --> <!-- throw no errors but doesn't seem to livereload .. -->
+  <!-- <script src="js/livereload.js"></script> --> <!-- nothing either -->
+  <!-- <script id="chromeLiveReloadPlaceHolder" src=""></script> --> <!-- populated at the end of "app_logic.js" -->
+  <!-- <div>LiveReload javascript is "<span id="livereload_content"/>"</div> -->
+  
+  <script src="./js/neatFramework__Chrome_serial_MODULE.js"></script> <!-- load the Chrome serial module -->
+  <script src="./js/neatFramework__Chrome_sockets_MODULE.js"></script> <!-- load the Chrome sockets module -->
+  <script src="./js/neatFramework_serial_console_MODULE.js"></script> <!-- load the neatFramework serial console module -->
+  <script src="./js/neatFramework_chrome_devtools_MODULE.js"></script> <!-- load the neatFramework chrome devtools module -->
+  <script src="./js/app_logic.js"></script> <!-- load the app logic ( not a "main.js" as the app is not big enough to need a dedicated module ) -->
+  
+  <!-- <script src="http://localhost:35729/livereload.js"></script> -->
+  <!-- <script src="http://localhost:35729/livereload.js"> </script> -->
+  <!-- <script src="./js/livereload.js"></script> -->
+
+</body>
+</html>

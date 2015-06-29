@@ -1,0 +1,12 @@
+{
+"name":"Tef Chrome Extension",
+"version": "0.1",
+"manifest_version": 2,
+"description":"First extension ever from stephaneAG",
+"browser_action":
+  {
+    "default_icon": "std_icon.png",
+    "default_title": "Tef's extension",
+    "default_popup": "testp.html"
+  }
+}
